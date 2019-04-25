@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" media="screen" href="../../css/bootstrap.min.css">
+</head>
+<body>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<form class="form-horizontal" onsubmit="return false" id="form">
+		<fieldset>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>上级栏目ID</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='reid' type='text' name='reid' id='reid' data-bv-notempty='true' data-bv-notempty-message='reid 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>顶级栏目ID</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='topid' type='text' name='topid' id='topid' data-bv-notempty='true' data-bv-notempty-message='topid 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>排序</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='sortrank' type='text' name='sortrank' id='sortrank' data-bv-notempty='true' data-bv-notempty-message='sortrank 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>栏目名称</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='typename' type='text' name='typename' id='typename' data-bv-notempty='true' data-bv-notempty-message='typename 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>栏目目录</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='typedir' type='text' name='typedir' id='typedir' data-bv-notempty='true' data-bv-notempty-message='typedir 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>是否默认</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='isdefault' type='text' name='isdefault' id='isdefault' data-bv-notempty='true' data-bv-notempty-message='isdefault 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>默认名称</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='defaultname' type='text' name='defaultname' id='defaultname' data-bv-notempty='true' data-bv-notempty-message='defaultname 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>是否支持投稿</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='issend' type='text' name='issend' id='issend' data-bv-notempty='true' data-bv-notempty-message='issend 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>栏目频道类型</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='channeltype' type='text' name='channeltype' id='channeltype' data-bv-notempty='true' data-bv-notempty-message='channeltype 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>最大页面数</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='maxpage' type='text' name='maxpage' id='maxpage' data-bv-notempty='true' data-bv-notempty-message='maxpage 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>栏目属性</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='ispart' type='text' name='ispart' id='ispart' data-bv-notempty='true' data-bv-notempty-message='ispart 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>浏览权限</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='corank' type='text' name='corank' id='corank' data-bv-notempty='true' data-bv-notempty-message='corank 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>频道页模板</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='tempindex' type='text' name='tempindex' id='tempindex' data-bv-notempty='true' data-bv-notempty-message='tempindex 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>列表页模板</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='templist' type='text' name='templist' id='templist' data-bv-notempty='true' data-bv-notempty-message='templist 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>内容页模板</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='temparticle' type='text' name='temparticle' id='temparticle' data-bv-notempty='true' data-bv-notempty-message='temparticle 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>文章命名规则</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='namerule' type='text' name='namerule' id='namerule' data-bv-notempty='true' data-bv-notempty-message='namerule 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>列表命名规则</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='namerule2' type='text' name='namerule2' id='namerule2' data-bv-notempty='true' data-bv-notempty-message='namerule2 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>模型名称</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='modname' type='text' name='modname' id='modname' data-bv-notempty='true' data-bv-notempty-message='modname 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>栏目描述</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='description' type='text' name='description' id='description' data-bv-notempty='true' data-bv-notempty-message='description 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>栏目关键词</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='keywords' type='text' name='keywords' id='keywords' data-bv-notempty='true' data-bv-notempty-message='keywords 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>SEO标题</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='seotitle' type='text' name='seotitle' id='seotitle' data-bv-notempty='true' data-bv-notempty-message='seotitle 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>多站点支持</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='moresite' type='text' name='moresite' id='moresite' data-bv-notempty='true' data-bv-notempty-message='moresite 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>站点根目录</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='sitepath' type='text' name='sitepath' id='sitepath' data-bv-notempty='true' data-bv-notempty-message='sitepath 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>绑定域名</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='siteurl' type='text' name='siteurl' id='siteurl' data-bv-notempty='true' data-bv-notempty-message='siteurl 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>是否隐藏</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='ishidden' type='text' name='ishidden' id='ishidden' data-bv-notempty='true' data-bv-notempty-message='ishidden 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>交叉栏目</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='cross' type='text' name='cross' id='cross' data-bv-notempty='true' data-bv-notempty-message='cross 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>交叉ID</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='crossid' type='text' name='crossid' id='crossid' data-bv-notempty='true' data-bv-notempty-message='crossid 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>栏目内容</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='content' type='text' name='content' id='content' data-bv-notempty='true' data-bv-notempty-message='content 不能为空'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='col-md-2 control-label'>栏目小分类</label>
+				<div class='col-md-10'>
+					<input class='form-control' placeholder='smalltypes' type='text' name='smalltypes' id='smalltypes' data-bv-notempty='true' data-bv-notempty-message='smalltypes 不能为空'>
+				</div>
+			</div>
+
+
+			<div class="form-actions">
+				<div class="row" align="center">
+					<div class="col-md-12">
+						<button class="btn btn-primary" onclick="location.href='dedeArctypeList.html'">返回</button>
+						<button class="btn btn-primary" type="submit" onclick="add()">
+							<i class="fa fa-save"></i> 保存
+						</button>
+					</div>
+				</div>
+			</div>
+
+		</fieldset>
+	</form>
+</div>
+<script type="text/javascript" src="../../js/libs/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../js/jq.js"></script>
+<script type="text/javascript" src="../../js/plugin/bootstrapvalidator/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript">
+	layui.use(['layer','laydate'], function(){
+		var layer = layui.layer;
+	});
+
+	function add() {
+		$('#form').bootstrapValidator();
+		var bootstrapValidator = $("#form").data('bootstrapValidator');
+		bootstrapValidator.validate();
+		if(!bootstrapValidator.isValid()){
+			return;
+		}
+
+		var formdata = $("#form").serializeObject();
+
+		$.ajax({
+			type : 'post',
+			url : '/dedeArctypes',
+			contentType: "application/json; charset=utf-8",
+			data : JSON.stringify(formdata),
+			success : function(data) {
+				layer.msg("添加成功", {shift: -1, time: 1000}, function(){
+					location.href = "dedeArctypeList.html";
+				});
+			}
+		});
+	}
+
+</script>
+</body>
+</html>

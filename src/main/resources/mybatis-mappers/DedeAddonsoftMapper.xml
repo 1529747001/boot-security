@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.security.server.dao.DedeAddonsoftDao">
+
+	<sql id="where">
+		<where>
+			<if test="params.aid != null and params.aid != ''">
+				and aid = #{params.aid} 
+			</if>
+			<if test="params.typeid != null and params.typeid != ''">
+				and typeid = #{params.typeid} 
+			</if>
+			<if test="params.filetype != null and params.filetype != ''">
+				and filetype = #{params.filetype} 
+			</if>
+			<if test="params.language != null and params.language != ''">
+				and language = #{params.language} 
+			</if>
+			<if test="params.softtype != null and params.softtype != ''">
+				and softtype = #{params.softtype} 
+			</if>
+			<if test="params.accredit != null and params.accredit != ''">
+				and accredit = #{params.accredit} 
+			</if>
+			<if test="params.os != null and params.os != ''">
+				and os = #{params.os} 
+			</if>
+			<if test="params.softrank != null and params.softrank != ''">
+				and softrank = #{params.softrank} 
+			</if>
+			<if test="params.officialUrl != null and params.officialUrl != ''">
+				and officialUrl = #{params.officialUrl} 
+			</if>
+			<if test="params.officialDemo != null and params.officialDemo != ''">
+				and officialDemo = #{params.officialDemo} 
+			</if>
+			<if test="params.softsize != null and params.softsize != ''">
+				and softsize = #{params.softsize} 
+			</if>
+			<if test="params.softlinks != null and params.softlinks != ''">
+				and softlinks = #{params.softlinks} 
+			</if>
+			<if test="params.introduce != null and params.introduce != ''">
+				and introduce = #{params.introduce} 
+			</if>
+			<if test="params.daccess != null and params.daccess != ''">
+				and daccess = #{params.daccess} 
+			</if>
+			<if test="params.needmoney != null and params.needmoney != ''">
+				and needmoney = #{params.needmoney} 
+			</if>
+			<if test="params.templet != null and params.templet != ''">
+				and templet = #{params.templet} 
+			</if>
+			<if test="params.userip != null and params.userip != ''">
+				and userip = #{params.userip} 
+			</if>
+			<if test="params.redirecturl != null and params.redirecturl != ''">
+				and redirecturl = #{params.redirecturl} 
+			</if>
+		
+		</where>
+	</sql>
+
+	<select id="count" resultType="int">
+		select count(1) from dede_addonsoft t
+		<include refid="where" />
+	</select>
+
+	<select id="list" resultType="DedeAddonsoft">
+		select * from dede_addonsoft t
+		<include refid="where" />
+		${params.orderBy}
+		limit #{offset}, #{limit}
+	</select>
+
+	<update id="update">
+		update dede_addonsoft t
+		<set>
+			<if test="aid != null">
+				aid = #{aid}, 
+			</if>
+			<if test="typeid != null">
+				typeid = #{typeid}, 
+			</if>
+			<if test="filetype != null">
+				filetype = #{filetype}, 
+			</if>
+			<if test="language != null">
+				language = #{language}, 
+			</if>
+			<if test="softtype != null">
+				softtype = #{softtype}, 
+			</if>
+			<if test="accredit != null">
+				accredit = #{accredit}, 
+			</if>
+			<if test="os != null">
+				os = #{os}, 
+			</if>
+			<if test="softrank != null">
+				softrank = #{softrank}, 
+			</if>
+			<if test="officialUrl != null">
+				officialUrl = #{officialUrl}, 
+			</if>
+			<if test="officialDemo != null">
+				officialDemo = #{officialDemo}, 
+			</if>
+			<if test="softsize != null">
+				softsize = #{softsize}, 
+			</if>
+			<if test="softlinks != null">
+				softlinks = #{softlinks}, 
+			</if>
+			<if test="introduce != null">
+				introduce = #{introduce}, 
+			</if>
+			<if test="daccess != null">
+				daccess = #{daccess}, 
+			</if>
+			<if test="needmoney != null">
+				needmoney = #{needmoney}, 
+			</if>
+			<if test="templet != null">
+				templet = #{templet}, 
+			</if>
+			<if test="userip != null">
+				userip = #{userip}, 
+			</if>
+			<if test="redirecturl != null">
+				redirecturl = #{redirecturl}, 
+			</if>
+
+		</set>
+
+		where t.id = #{id}
+	</update>
+
+</mapper>

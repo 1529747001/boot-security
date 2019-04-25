@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.security.server.dao.DedeArchivesDao">
+
+	<sql id="where">
+		<where>
+			<if test="params.id != null and params.id != ''">
+				and id = #{params.id} 
+			</if>
+			<if test="params.typeid != null and params.typeid != ''">
+				and typeid = #{params.typeid} 
+			</if>
+			<if test="params.typeid2 != null and params.typeid2 != ''">
+				and typeid2 = #{params.typeid2} 
+			</if>
+			<if test="params.sortrank != null and params.sortrank != ''">
+				and sortrank = #{params.sortrank} 
+			</if>
+			<if test="params.flag != null and params.flag != ''">
+				and flag = #{params.flag} 
+			</if>
+			<if test="params.ismake != null and params.ismake != ''">
+				and ismake = #{params.ismake} 
+			</if>
+			<if test="params.channel != null and params.channel != ''">
+				and channel = #{params.channel} 
+			</if>
+			<if test="params.arcrank != null and params.arcrank != ''">
+				and arcrank = #{params.arcrank} 
+			</if>
+			<if test="params.click != null and params.click != ''">
+				and click = #{params.click} 
+			</if>
+			<if test="params.money != null and params.money != ''">
+				and money = #{params.money} 
+			</if>
+			<if test="params.title != null and params.title != ''">
+				and title = #{params.title} 
+			</if>
+			<if test="params.shorttitle != null and params.shorttitle != ''">
+				and shorttitle = #{params.shorttitle} 
+			</if>
+			<if test="params.color != null and params.color != ''">
+				and color = #{params.color} 
+			</if>
+			<if test="params.writer != null and params.writer != ''">
+				and writer = #{params.writer} 
+			</if>
+			<if test="params.source != null and params.source != ''">
+				and source = #{params.source} 
+			</if>
+			<if test="params.litpic != null and params.litpic != ''">
+				and litpic = #{params.litpic} 
+			</if>
+			<if test="params.pubdate != null and params.pubdate != ''">
+				and pubdate = #{params.pubdate} 
+			</if>
+			<if test="params.senddate != null and params.senddate != ''">
+				and senddate = #{params.senddate} 
+			</if>
+			<if test="params.mid != null and params.mid != ''">
+				and mid = #{params.mid} 
+			</if>
+			<if test="params.keywords != null and params.keywords != ''">
+				and keywords = #{params.keywords} 
+			</if>
+			<if test="params.lastpost != null and params.lastpost != ''">
+				and lastpost = #{params.lastpost} 
+			</if>
+			<if test="params.scores != null and params.scores != ''">
+				and scores = #{params.scores} 
+			</if>
+			<if test="params.goodpost != null and params.goodpost != ''">
+				and goodpost = #{params.goodpost} 
+			</if>
+			<if test="params.badpost != null and params.badpost != ''">
+				and badpost = #{params.badpost} 
+			</if>
+			<if test="params.voteid != null and params.voteid != ''">
+				and voteid = #{params.voteid} 
+			</if>
+			<if test="params.notpost != null and params.notpost != ''">
+				and notpost = #{params.notpost} 
+			</if>
+			<if test="params.description != null and params.description != ''">
+				and description = #{params.description} 
+			</if>
+			<if test="params.filename != null and params.filename != ''">
+				and filename = #{params.filename} 
+			</if>
+			<if test="params.dutyadmin != null and params.dutyadmin != ''">
+				and dutyadmin = #{params.dutyadmin} 
+			</if>
+			<if test="params.tackid != null and params.tackid != ''">
+				and tackid = #{params.tackid} 
+			</if>
+			<if test="params.mtype != null and params.mtype != ''">
+				and mtype = #{params.mtype} 
+			</if>
+			<if test="params.weight != null and params.weight != ''">
+				and weight = #{params.weight} 
+			</if>
+		
+		</where>
+	</sql>
+
+	<select id="count" resultType="int">
+		select count(1) from dede_archives t
+		<include refid="where" />
+	</select>
+
+	<select id="list" resultType="DedeArchives">
+		select * from dede_archives t
+		<include refid="where" />
+		${params.orderBy}
+		limit #{offset}, #{limit}
+	</select>
+
+	<update id="update">
+		update dede_archives t
+		<set>
+			<if test="typeid != null">
+				typeid = #{typeid}, 
+			</if>
+			<if test="typeid2 != null">
+				typeid2 = #{typeid2}, 
+			</if>
+			<if test="sortrank != null">
+				sortrank = #{sortrank}, 
+			</if>
+			<if test="flag != null">
+				flag = #{flag}, 
+			</if>
+			<if test="ismake != null">
+				ismake = #{ismake}, 
+			</if>
+			<if test="channel != null">
+				channel = #{channel}, 
+			</if>
+			<if test="arcrank != null">
+				arcrank = #{arcrank}, 
+			</if>
+			<if test="click != null">
+				click = #{click}, 
+			</if>
+			<if test="money != null">
+				money = #{money}, 
+			</if>
+			<if test="title != null">
+				title = #{title}, 
+			</if>
+			<if test="shorttitle != null">
+				shorttitle = #{shorttitle}, 
+			</if>
+			<if test="color != null">
+				color = #{color}, 
+			</if>
+			<if test="writer != null">
+				writer = #{writer}, 
+			</if>
+			<if test="source != null">
+				source = #{source}, 
+			</if>
+			<if test="litpic != null">
+				litpic = #{litpic}, 
+			</if>
+			<if test="pubdate != null">
+				pubdate = #{pubdate}, 
+			</if>
+			<if test="senddate != null">
+				senddate = #{senddate}, 
+			</if>
+			<if test="mid != null">
+				mid = #{mid}, 
+			</if>
+			<if test="keywords != null">
+				keywords = #{keywords}, 
+			</if>
+			<if test="lastpost != null">
+				lastpost = #{lastpost}, 
+			</if>
+			<if test="scores != null">
+				scores = #{scores}, 
+			</if>
+			<if test="goodpost != null">
+				goodpost = #{goodpost}, 
+			</if>
+			<if test="badpost != null">
+				badpost = #{badpost}, 
+			</if>
+			<if test="voteid != null">
+				voteid = #{voteid}, 
+			</if>
+			<if test="notpost != null">
+				notpost = #{notpost}, 
+			</if>
+			<if test="description != null">
+				description = #{description}, 
+			</if>
+			<if test="filename != null">
+				filename = #{filename}, 
+			</if>
+			<if test="dutyadmin != null">
+				dutyadmin = #{dutyadmin}, 
+			</if>
+			<if test="tackid != null">
+				tackid = #{tackid}, 
+			</if>
+			<if test="mtype != null">
+				mtype = #{mtype}, 
+			</if>
+			<if test="weight != null">
+				weight = #{weight}, 
+			</if>
+
+		</set>
+
+		where t.id = #{id}
+	</update>
+
+</mapper>

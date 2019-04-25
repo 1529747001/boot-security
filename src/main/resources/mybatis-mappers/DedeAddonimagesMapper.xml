@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.security.server.dao.DedeAddonimagesDao">
+
+	<sql id="where">
+		<where>
+			<if test="params.aid != null and params.aid != ''">
+				and aid = #{params.aid} 
+			</if>
+			<if test="params.typeid != null and params.typeid != ''">
+				and typeid = #{params.typeid} 
+			</if>
+			<if test="params.pagestyle != null and params.pagestyle != ''">
+				and pagestyle = #{params.pagestyle} 
+			</if>
+			<if test="params.maxwidth != null and params.maxwidth != ''">
+				and maxwidth = #{params.maxwidth} 
+			</if>
+			<if test="params.imgurls != null and params.imgurls != ''">
+				and imgurls = #{params.imgurls} 
+			</if>
+			<if test="params.row != null and params.row != ''">
+				and row = #{params.row} 
+			</if>
+			<if test="params.col != null and params.col != ''">
+				and col = #{params.col} 
+			</if>
+			<if test="params.isrm != null and params.isrm != ''">
+				and isrm = #{params.isrm} 
+			</if>
+			<if test="params.ddmaxwidth != null and params.ddmaxwidth != ''">
+				and ddmaxwidth = #{params.ddmaxwidth} 
+			</if>
+			<if test="params.pagepicnum != null and params.pagepicnum != ''">
+				and pagepicnum = #{params.pagepicnum} 
+			</if>
+			<if test="params.templet != null and params.templet != ''">
+				and templet = #{params.templet} 
+			</if>
+			<if test="params.userip != null and params.userip != ''">
+				and userip = #{params.userip} 
+			</if>
+			<if test="params.redirecturl != null and params.redirecturl != ''">
+				and redirecturl = #{params.redirecturl} 
+			</if>
+			<if test="params.body != null and params.body != ''">
+				and body = #{params.body} 
+			</if>
+		
+		</where>
+	</sql>
+
+	<select id="count" resultType="int">
+		select count(1) from dede_addonimages t
+		<include refid="where" />
+	</select>
+
+	<select id="list" resultType="DedeAddonimages">
+		select * from dede_addonimages t
+		<include refid="where" />
+		${params.orderBy}
+		limit #{offset}, #{limit}
+	</select>
+
+	<update id="update">
+		update dede_addonimages t
+		<set>
+			<if test="aid != null">
+				aid = #{aid}, 
+			</if>
+			<if test="typeid != null">
+				typeid = #{typeid}, 
+			</if>
+			<if test="pagestyle != null">
+				pagestyle = #{pagestyle}, 
+			</if>
+			<if test="maxwidth != null">
+				maxwidth = #{maxwidth}, 
+			</if>
+			<if test="imgurls != null">
+				imgurls = #{imgurls}, 
+			</if>
+			<if test="row != null">
+				row = #{row}, 
+			</if>
+			<if test="col != null">
+				col = #{col}, 
+			</if>
+			<if test="isrm != null">
+				isrm = #{isrm}, 
+			</if>
+			<if test="ddmaxwidth != null">
+				ddmaxwidth = #{ddmaxwidth}, 
+			</if>
+			<if test="pagepicnum != null">
+				pagepicnum = #{pagepicnum}, 
+			</if>
+			<if test="templet != null">
+				templet = #{templet}, 
+			</if>
+			<if test="userip != null">
+				userip = #{userip}, 
+			</if>
+			<if test="redirecturl != null">
+				redirecturl = #{redirecturl}, 
+			</if>
+			<if test="body != null">
+				body = #{body}, 
+			</if>
+
+		</set>
+
+		where t.id = #{id}
+	</update>
+
+</mapper>

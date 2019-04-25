@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.security.server.dao.DedeArctypeDao">
+
+	<sql id="where">
+		<where>
+			<if test="params.id != null and params.id != ''">
+				and id = #{params.id} 
+			</if>
+			<if test="params.reid != null and params.reid != ''">
+				and reid = #{params.reid} 
+			</if>
+			<if test="params.topid != null and params.topid != ''">
+				and topid = #{params.topid} 
+			</if>
+			<if test="params.sortrank != null and params.sortrank != ''">
+				and sortrank = #{params.sortrank} 
+			</if>
+			<if test="params.typename != null and params.typename != ''">
+				and typename = #{params.typename} 
+			</if>
+			<if test="params.typedir != null and params.typedir != ''">
+				and typedir = #{params.typedir} 
+			</if>
+			<if test="params.isdefault != null and params.isdefault != ''">
+				and isdefault = #{params.isdefault} 
+			</if>
+			<if test="params.defaultname != null and params.defaultname != ''">
+				and defaultname = #{params.defaultname} 
+			</if>
+			<if test="params.issend != null and params.issend != ''">
+				and issend = #{params.issend} 
+			</if>
+			<if test="params.channeltype != null and params.channeltype != ''">
+				and channeltype = #{params.channeltype} 
+			</if>
+			<if test="params.maxpage != null and params.maxpage != ''">
+				and maxpage = #{params.maxpage} 
+			</if>
+			<if test="params.ispart != null and params.ispart != ''">
+				and ispart = #{params.ispart} 
+			</if>
+			<if test="params.corank != null and params.corank != ''">
+				and corank = #{params.corank} 
+			</if>
+			<if test="params.tempindex != null and params.tempindex != ''">
+				and tempindex = #{params.tempindex} 
+			</if>
+			<if test="params.templist != null and params.templist != ''">
+				and templist = #{params.templist} 
+			</if>
+			<if test="params.temparticle != null and params.temparticle != ''">
+				and temparticle = #{params.temparticle} 
+			</if>
+			<if test="params.namerule != null and params.namerule != ''">
+				and namerule = #{params.namerule} 
+			</if>
+			<if test="params.namerule2 != null and params.namerule2 != ''">
+				and namerule2 = #{params.namerule2} 
+			</if>
+			<if test="params.modname != null and params.modname != ''">
+				and modname = #{params.modname} 
+			</if>
+			<if test="params.description != null and params.description != ''">
+				and description = #{params.description} 
+			</if>
+			<if test="params.keywords != null and params.keywords != ''">
+				and keywords = #{params.keywords} 
+			</if>
+			<if test="params.seotitle != null and params.seotitle != ''">
+				and seotitle = #{params.seotitle} 
+			</if>
+			<if test="params.moresite != null and params.moresite != ''">
+				and moresite = #{params.moresite} 
+			</if>
+			<if test="params.sitepath != null and params.sitepath != ''">
+				and sitepath = #{params.sitepath} 
+			</if>
+			<if test="params.siteurl != null and params.siteurl != ''">
+				and siteurl = #{params.siteurl} 
+			</if>
+			<if test="params.ishidden != null and params.ishidden != ''">
+				and ishidden = #{params.ishidden} 
+			</if>
+			<if test="params.cross != null and params.cross != ''">
+				and cross = #{params.cross} 
+			</if>
+			<if test="params.crossid != null and params.crossid != ''">
+				and crossid = #{params.crossid} 
+			</if>
+			<if test="params.content != null and params.content != ''">
+				and content = #{params.content} 
+			</if>
+			<if test="params.smalltypes != null and params.smalltypes != ''">
+				and smalltypes = #{params.smalltypes} 
+			</if>
+		
+		</where>
+	</sql>
+
+	<select id="count" resultType="int">
+		select count(1) from dede_arctype t
+		<include refid="where" />
+	</select>
+
+	<select id="list" resultType="DedeArctype">
+		select * from dede_arctype t
+		<include refid="where" />
+		${params.orderBy}
+		limit #{offset}, #{limit}
+	</select>
+
+	<update id="update">
+		update dede_arctype t
+		<set>
+			<if test="reid != null">
+				t.reid = #{reid},
+			</if>
+			<if test="topid != null">
+				t.topid = #{topid},
+			</if>
+			<if test="sortrank != null">
+				t.sortrank = #{sortrank},
+			</if>
+			<if test="typename != null">
+				t.typename = #{typename},
+			</if>
+			<if test="typedir != null">
+				t.typedir = #{typedir},
+			</if>
+			<if test="isdefault != null">
+				t.isdefault = #{isdefault},
+			</if>
+			<if test="defaultname != null">
+				t.defaultname = #{defaultname},
+			</if>
+			<if test="issend != null">
+				t.issend = #{issend},
+			</if>
+			<if test="channeltype != null">
+				t.channeltype = #{channeltype},
+			</if>
+			<if test="maxpage != null">
+				t.maxpage = #{maxpage},
+			</if>
+			<if test="ispart != null">
+				t.ispart = #{ispart},
+			</if>
+			<if test="corank != null">
+				t.corank = #{corank},
+			</if>
+			<if test="tempindex != null">
+				t.tempindex = #{tempindex},
+			</if>
+			<if test="templist != null">
+				t.templist = #{templist},
+			</if>
+			<if test="temparticle != null">
+				t.temparticle = #{temparticle},
+			</if>
+			<if test="namerule != null">
+				t.namerule = #{namerule},
+			</if>
+			<if test="namerule2 != null">
+				t.namerule2 = #{namerule2},
+			</if>
+			<if test="modname != null">
+				t.modname = #{modname},
+			</if>
+			<if test="description != null">
+				t.description = #{description},
+			</if>
+			<if test="keywords != null">
+				t.keywords = #{keywords},
+			</if>
+			<if test="seotitle != null">
+				t.seotitle = #{seotitle},
+			</if>
+			<if test="moresite != null">
+				t.moresite = #{moresite},
+			</if>
+			<if test="sitepath != null">
+				t.sitepath = #{sitepath},
+			</if>
+			<if test="siteurl != null">
+				t.siteurl = #{siteurl},
+			</if>
+			<if test="ishidden != null">
+				t.ishidden = #{ishidden},
+			</if>
+			<if test="cross != null">
+				t.cross = #{cross},
+			</if>
+			<if test="crossid != null">
+				t.crossid = #{crossid},
+			</if>
+			<if test="content != null">
+				t.content = #{content},
+			</if>
+			<if test="smalltypes != null">
+				t.smalltypes = #{smalltypes},
+			</if>
+
+		</set>
+
+		where t.id = #{id}
+	</update>
+
+</mapper>

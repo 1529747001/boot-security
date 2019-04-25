@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.security.server.dao.DedeAddonshopDao">
+
+	<sql id="where">
+		<where>
+			<if test="params.aid != null and params.aid != ''">
+				and aid = #{params.aid} 
+			</if>
+			<if test="params.typeid != null and params.typeid != ''">
+				and typeid = #{params.typeid} 
+			</if>
+			<if test="params.body != null and params.body != ''">
+				and body = #{params.body} 
+			</if>
+			<if test="params.price != null and params.price != ''">
+				and price = #{params.price} 
+			</if>
+			<if test="params.trueprice != null and params.trueprice != ''">
+				and trueprice = #{params.trueprice} 
+			</if>
+			<if test="params.brand != null and params.brand != ''">
+				and brand = #{params.brand} 
+			</if>
+			<if test="params.units != null and params.units != ''">
+				and units = #{params.units} 
+			</if>
+			<if test="params.templet != null and params.templet != ''">
+				and templet = #{params.templet} 
+			</if>
+			<if test="params.userip != null and params.userip != ''">
+				and userip = #{params.userip} 
+			</if>
+			<if test="params.redirecturl != null and params.redirecturl != ''">
+				and redirecturl = #{params.redirecturl} 
+			</if>
+			<if test="params.vocation != null and params.vocation != ''">
+				and vocation = #{params.vocation} 
+			</if>
+			<if test="params.infotype != null and params.infotype != ''">
+				and infotype = #{params.infotype} 
+			</if>
+			<if test="params.uptime != null and params.uptime != ''">
+				and uptime = #{params.uptime} 
+			</if>
+		
+		</where>
+	</sql>
+
+	<select id="count" resultType="int">
+		select count(1) from dede_addonshop t
+		<include refid="where" />
+	</select>
+
+	<select id="list" resultType="DedeAddonshop">
+		select * from dede_addonshop t
+		<include refid="where" />
+		${params.orderBy}
+		limit #{offset}, #{limit}
+	</select>
+
+	<update id="update">
+		update dede_addonshop t
+		<set>
+			<if test="aid != null">
+				aid = #{aid}, 
+			</if>
+			<if test="typeid != null">
+				typeid = #{typeid}, 
+			</if>
+			<if test="body != null">
+				body = #{body}, 
+			</if>
+			<if test="price != null">
+				price = #{price}, 
+			</if>
+			<if test="trueprice != null">
+				trueprice = #{trueprice}, 
+			</if>
+			<if test="brand != null">
+				brand = #{brand}, 
+			</if>
+			<if test="units != null">
+				units = #{units}, 
+			</if>
+			<if test="templet != null">
+				templet = #{templet}, 
+			</if>
+			<if test="userip != null">
+				userip = #{userip}, 
+			</if>
+			<if test="redirecturl != null">
+				redirecturl = #{redirecturl}, 
+			</if>
+			<if test="vocation != null">
+				vocation = #{vocation}, 
+			</if>
+			<if test="infotype != null">
+				infotype = #{infotype}, 
+			</if>
+			<if test="uptime != null">
+				uptime = #{uptime}, 
+			</if>
+
+		</set>
+
+		where t.id = #{id}
+	</update>
+
+</mapper>
